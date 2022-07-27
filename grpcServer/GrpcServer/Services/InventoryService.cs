@@ -17,13 +17,13 @@ public class InventoryService : Inventory.InventoryBase
     var response = new GetBookListResponse();
     response.Books.Add(new Book
     {
-      Title = "kemal kemal kemal The Hitchhiker's Guide to the Galaxy",
+      Title = "kemal fasa kemal fasa kemal fasa The Hitchhiker's Guide to the Galaxy",
       Author = "Douglas Adams",
       PageCount = 42
     });
     response.Books.Add(new Book
     {
-      Title = "kemal kemal kemal  The Lord of the Rings",
+      Title = "kemal fasa kemal fasa kemal  fasa The Lord of the Rings",
       Author = "J.R.R. Tolkien",
       PageCount = 1234
     });

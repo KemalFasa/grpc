@@ -1,0 +1,2 @@
+obj\Debug\net6.0/Bookshop.cs \
+obj\Debug\net6.0/BookshopGrpc.cs: ../grpcServer/GrpcServer/Protos/Bookshop.proto
