@@ -26,15 +26,23 @@ namespace GrpcServer {
           string.Concat(
             "ChVQcm90b3MvQm9va3Nob3AucHJvdG8iXQoEQm9vaxINCgV0aXRsZRgBIAEo",
             "CRIOCgZhdXRob3IYAiABKAkSEgoKcGFnZV9jb3VudBgDIAEoBRIVCghsYW5n",
-            "dWFnZRgEIAEoCUgAiAEBQgsKCV9sYW5ndWFnZSIUChJHZXRCb29rTGlzdFJl",
-            "cXVlc3QiKwoTR2V0Qm9va0xpc3RSZXNwb25zZRIUCgVib29rcxgBIAMoCzIF",
-            "LkJvb2syRwoJSW52ZW50b3J5EjoKC0dldEJvb2tMaXN0EhMuR2V0Qm9va0xp",
-            "c3RSZXF1ZXN0GhQuR2V0Qm9va0xpc3RSZXNwb25zZSIAQg2qAgpHcnBjU2Vy",
-            "dmVyYgZwcm90bzM="));
+            "dWFnZRgEIAEoCUgAiAEBQgsKCV9sYW5ndWFnZSIaCghEaXNjb3VudBIOCgZB",
+            "bW91bnQYASABKAUiKQoSR2V0RGlzY291bnRSZXF1ZXN0EhMKC3Byb2R1Y3RO",
+            "YW1lGAEgASgFIjIKE0dldERpc2NvdW50UmVzcG9uc2USGwoIRGlzY291bnQY",
+            "ASADKAsyCS5EaXNjb3VudCIUChJHZXRCb29rTGlzdFJlcXVlc3QiKwoTR2V0",
+            "Qm9va0xpc3RSZXNwb25zZRIUCgVib29rcxgBIAMoCzIFLkJvb2sygwEKCUlu",
+            "dmVudG9yeRI6CgtHZXRCb29rTGlzdBITLkdldEJvb2tMaXN0UmVxdWVzdBoU",
+            "LkdldEJvb2tMaXN0UmVzcG9uc2UiABI6CgtHZXREaXNjb3VudBITLkdldERp",
+            "c2NvdW50UmVxdWVzdBoULkdldERpc2NvdW50UmVzcG9uc2UiADJECgZCYXNr",
+            "ZXQSOgoLR2V0RGlzY291bnQSEy5HZXREaXNjb3VudFJlcXVlc3QaFC5HZXRE",
+            "aXNjb3VudFJlc3BvbnNlIgBCDaoCCkdycGNTZXJ2ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Book), global::GrpcServer.Book.Parser, new[]{ "Title", "Author", "PageCount", "Language" }, new[]{ "Language" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.Discount), global::GrpcServer.Discount.Parser, new[]{ "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.GetDiscountRequest), global::GrpcServer.GetDiscountRequest.Parser, new[]{ "ProductName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.GetDiscountResponse), global::GrpcServer.GetDiscountResponse.Parser, new[]{ "Discount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.GetBookListRequest), global::GrpcServer.GetBookListRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.GetBookListResponse), global::GrpcServer.GetBookListResponse.Parser, new[]{ "Books" }, null, null, null, null)
           }));
@@ -333,6 +341,511 @@ namespace GrpcServer {
 
   }
 
+  public sealed partial class Discount : pb::IMessage<Discount>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Discount> _parser = new pb::MessageParser<Discount>(() => new Discount());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Discount> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Discount() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Discount(Discount other) : this() {
+      amount_ = other.amount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Discount Clone() {
+      return new Discount(this);
+    }
+
+    /// <summary>Field number for the "Amount" field.</summary>
+    public const int AmountFieldNumber = 1;
+    private int amount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Discount);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Discount other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Amount != other.Amount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Amount != 0) hash ^= Amount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Amount != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Amount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Amount != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Amount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Amount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Amount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Discount other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Amount != 0) {
+        Amount = other.Amount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Amount = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Amount = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GetDiscountRequest : pb::IMessage<GetDiscountRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetDiscountRequest> _parser = new pb::MessageParser<GetDiscountRequest>(() => new GetDiscountRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetDiscountRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDiscountRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDiscountRequest(GetDiscountRequest other) : this() {
+      productName_ = other.productName_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDiscountRequest Clone() {
+      return new GetDiscountRequest(this);
+    }
+
+    /// <summary>Field number for the "productName" field.</summary>
+    public const int ProductNameFieldNumber = 1;
+    private int productName_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ProductName {
+      get { return productName_; }
+      set {
+        productName_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetDiscountRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetDiscountRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ProductName != other.ProductName) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ProductName != 0) hash ^= ProductName.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ProductName != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ProductName);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ProductName != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ProductName);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ProductName != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ProductName);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetDiscountRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ProductName != 0) {
+        ProductName = other.ProductName;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ProductName = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            ProductName = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GetDiscountResponse : pb::IMessage<GetDiscountResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetDiscountResponse> _parser = new pb::MessageParser<GetDiscountResponse>(() => new GetDiscountResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetDiscountResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDiscountResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDiscountResponse(GetDiscountResponse other) : this() {
+      discount_ = other.discount_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDiscountResponse Clone() {
+      return new GetDiscountResponse(this);
+    }
+
+    /// <summary>Field number for the "Discount" field.</summary>
+    public const int DiscountFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::GrpcServer.Discount> _repeated_discount_codec
+        = pb::FieldCodec.ForMessage(10, global::GrpcServer.Discount.Parser);
+    private readonly pbc::RepeatedField<global::GrpcServer.Discount> discount_ = new pbc::RepeatedField<global::GrpcServer.Discount>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::GrpcServer.Discount> Discount {
+      get { return discount_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetDiscountResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetDiscountResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!discount_.Equals(other.discount_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= discount_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      discount_.WriteTo(output, _repeated_discount_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      discount_.WriteTo(ref output, _repeated_discount_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += discount_.CalculateSize(_repeated_discount_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetDiscountResponse other) {
+      if (other == null) {
+        return;
+      }
+      discount_.Add(other.discount_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            discount_.AddEntriesFrom(input, _repeated_discount_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            discount_.AddEntriesFrom(ref input, _repeated_discount_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class GetBookListRequest : pb::IMessage<GetBookListRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -345,7 +858,7 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -481,7 +994,7 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[2]; }
+      get { return global::GrpcServer.BookshopReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -8,10 +8,23 @@ message Book {
   int32 page_count = 3;
   optional string language = 4;
 }
+message Discount {
+ 
+  int32 Amount = 1;
+}
+
+message GetDiscountRequest {
+  int32 productName = 1;
+}
+message GetDiscountResponse {repeated Discount Discount = 1;}
 
 message GetBookListRequest {}
 message GetBookListResponse { repeated Book books = 1; }
 
 service Inventory {
   rpc GetBookList(GetBookListRequest) returns (GetBookListResponse) {}
+  rpc GetDiscount(GetDiscountRequest) returns (GetDiscountResponse) {}
+}
+service Basket {
+  rpc GetDiscount(GetDiscountRequest) returns (GetDiscountResponse) {}
 }
